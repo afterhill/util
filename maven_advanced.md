@@ -2,7 +2,7 @@
 
 利用多个profile分离开发、测试和产品环境：
 
-```
+```xml
 <project>
   <profiles>
     <profile>
