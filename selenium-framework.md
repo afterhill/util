@@ -164,3 +164,31 @@ the data as an array of hashes via a hashes( ) method.
 
 *Scenario Outline*
 
+Scenario outlines solve this problem by letting us define an outline for
+a scenario once, with placeholders for the values that might change
+from scenario to scenario. Then we can express the values in a tabular
+format that is very easy to scan and get the whole picture:
+
+Cucumber supports Scenarios and Examples keywords to identify tabular data for a
+scenario outline. Some users prefer to use Scenarios to avoid using words we use in RSpec,
+but many people like to use Examples in order to better differentiate from the Scenario
+keyword. Both do exactly the same thing, so the choice is a subjective one and yours to
+make.
+
+*Configuration*
+
+Cucumber - command line options and switches.
+
++ wip: --tags @wip features
++ profile (maven support)
++ dryRun (only parse gherkin files)
+
+Misc References:
+
+<https://webcache.googleusercontent.com/search?q=cache:FrsuFi4vny4J:www.weblogism.com/item/341/cucumber-jvm-113-issue-with-json-formatter+&cd=1&hl=en&ct=clnk>
+<http://cukes.info/api/cucumber/jvm/javadoc/>
+<http://cukes.info/install-cucumber-jvm.html>
+<https://github.com/cucumber/cucumber-jvm>
+<http://zsoltfabok.com/blog/2012/09/cucumber-jvm-hooks/>
+<https://github.com/tychobrailleur/cucumber-jvm-examples/blob/master/java-example/pom.xml>
+<https://webcache.googleusercontent.com/search?q=cache:MGBrirCdMN8J:www.weblogism.com/item/334/integration-tests-with-cucumber-jvm-selenium-and-maven+&cd=1&hl=zh-CN&ct=clnk&gl=cn>
