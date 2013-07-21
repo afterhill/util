@@ -94,5 +94,14 @@ cucumber --tags ~@foo
 ```
 
 
+###Cucumber Details
 
+*Step Definition*
+
+Argument
+
+If a step definition’s regular expression contains one or more capture groups, it will treat them as arguments 
+to the step definition’s block.
+
+World
 
