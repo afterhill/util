@@ -19,4 +19,80 @@ In test-driven developement you write one single test that fails, write just eno
 pass and all the other passed test case still passes. And then refactor your code to prepare it for the next tiny step.
 TDD is a design approach and helps users write better code, because testable code is written by default.
 
-======  
+------  
+
+####Cucumber
+
++ features
++ cucumber command
++ step definition
+
+####Gherkin
+
++ title
++ free-form narrative
++ arbitrary number of scenarios
++ arbitrary number of steps
+
+####Features
+
+In Cucumber, a feature is a high-level requirement expressed from the perspective of a person or another computer 
+using the system. Features play a role similar to that of user stories in XP, but we take things a step further.
+
+*Title*
+
+few words that represent an activity for which a user may engage the system.
+
+*Narrative*
+
+The connextra format:
+
+```xml
+As a <role>
+I want <feature>
+So that <business value>
+```
+
+###Gherkin Keywords
+
++ Feature
++ Background
++ Scenario
++ Scenario outline
++ Scenarios or examples
++ Given
++ Then
++ And or but
++ | (define tables)
++ `"""` define multiline string
++ # comment
+
+*Scenario*
+
+concrete example of how we want the system to behaviour.
+
+*Steps*
+
+Scenario use an arbitrary number of steps to describe everything that happen within a scenario. A step is generally a 
+single line of text that start with one of step keywords: Given, When, Then, And, But.
+
+###Cucumber command
+
+Cucumber command runs all the `*.feature` files below the features directories.
+
+*Tags*
+
+`cucumber --tags @wip`
+
+`cucumber --tags @foo, @bar`  `@foo || @bar`
+
+`cucumber --tags @foo --tags @bar` `@foo && @bar`
+
+```
+cucumber --tags ~@foo 
+!@foo
+```
+
+
+
+
