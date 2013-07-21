@@ -98,10 +98,69 @@ cucumber --tags ~@foo
 
 *Step Definition*
 
-Argument
+**Argument**
 
 If a step definition’s regular expression contains one or more capture groups, it will treat them as arguments 
 to the step definition’s block.
 
-World
+**World**
+
+(https://groups.google.com/forum/#!topic/cukes/8ugcVreXP0Y)
+
+The purpose of a "World" is twofold:
+1) Isolate state between scenarios.
+2) share data between step definitions and hooks within a scenario.
+
+The equivalent of the World in Cucumber-Java is _all of the objects with hook or stepdef annotations_. 
+In other words, any class with methods annotated with @Before, @After, @Given and so on will be instantiated exactly 
+once for each scenario.
+
+a) Use a single class for all of your step definitions and hooks
+b) Use several classes divided by responsibility [1] and use dependency injection [2] to connect them to each other.
+
+Option a) quickly breaks down because your step definition code becomes a mess. That's why people tend to use b).
+
+**Nested Steps**
+
+(https://groups.google.com/forum/#!topic/cukes/OUy9go8AsTo)
+
+refactor to common method
+
+*Hooks*
+
++ Before
++ After
++ Executed before and after each scenario!
+
+**Tagged Hooks**
+
+<https://github.com/cucumber/cucumber/wiki/Hooks>
+<https://github.com/cucumber/cucumber-jvm/blob/master/ex
+amples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java>
+<http://zsoltfabok.com/blog/2012/09/cucumber-jvm-hooks/>
+
+DI Hooks:
+
+<https://gist.github.com/paoloambrosio/3874974>
+<https://gist.github.com/paoloambrosio/5952737>
+<https://github.com/cucumber/cucumber-jvm/pull/295>
+<https://groups.google.com/forum/#!topic/cukes/Z2mWgk0rSgs>
+
+*Background*
+
+Hooks in features files will be executed before each scenario.
+
+Before Hooks will run before Background hook.
+
+*Multiline Text*
+
+use `"""`
+
+*Table Values*
+
+When Cucumber sees a | at the beginning of a line following a line with a Step keyword, it parses that 
+and all subsequent lines beginning with | and stores the cell values in a Cucumber::Ast::Table object, which exposes
+the data as an array of hashes via a hashes( ) method.
+
+*Scenario Outline*
 
