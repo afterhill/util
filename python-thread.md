@@ -82,10 +82,10 @@ Locks have 2 states: locked and unlocked. 2 methods are used to manipulate them:
 
 
 
-if the state is unlocked: a call to acquire() changes the state to locked.
-if the state is locked: a call to acquire() blocks until another thread calls release().
-if the state is unlocked: a call to release() raises a RuntimeError exception.
-if the state is locked: a call to release() changes the state to unlocked().
++ if the state is unlocked: a call to acquire() changes the state to locked.
++ if the state is locked: a call to acquire() blocks until another thread calls release().
++ if the state is unlocked: a call to release() raises a RuntimeError exception.
++ if the state is locked: a call to release() changes the state to unlocked().
 
 To solve our issue of 2 threads writing to the same file at the same time, we pass a lock to the FetchUrls constructor and we use it to protect the file write operation. I am just going to highlight the modifications relevant to locks. The source code can be found in threads/lock.py.
 
